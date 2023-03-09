@@ -2,12 +2,14 @@ package core
 
 import (
 	"FengfengStudy/config"
+	"FengfengStudy/global"
 	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 )
 
+// InitConf 初始化配置文件
 func InitConf() {
 	const ConfigFile = "settings.yaml"
 	c := &config.Config{}
@@ -20,5 +22,6 @@ func InitConf() {
 		log.Fatalf("config Init Unmarshal: %v", err)
 	}
 	log.Println("config yamlFile load Init success")
-	fmt.Println(c)
+	global.Config = c
+	// 传给全局变量
 }
