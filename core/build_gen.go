@@ -2,6 +2,7 @@ package core
 
 import (
 	"FengfengStudy/global"
+	"fmt"
 	"github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/gen"
@@ -17,7 +18,7 @@ func BuildGen() *gorm.DB {
 	log.Println(dsn())
 	db, err := gorm.Open(mysql.Open(dsn()))
 	if err != nil {
-		log.Fatalln(err)
+		global.Log.Fatalf(fmt.Sprintf("[%s] mysql 连接失败", dsn()))
 	}
 
 	// gen 配置
