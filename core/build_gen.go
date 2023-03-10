@@ -23,8 +23,8 @@ func BuildGen() *gorm.DB {
 
 	// gen 配置
 	g := gen.NewGenerator(gen.Config{
-		OutPath:      "./core/orm/dal",
-		ModelPkgPath: "./core/orm/model",
+		OutPath:      "./models/orm/dal",
+		ModelPkgPath: "./models/orm/model",
 		Mode:         gen.WithDefaultQuery | gen.WithoutContext,
 	})
 	// 使用数据库
