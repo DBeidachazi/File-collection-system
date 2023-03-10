@@ -2,6 +2,7 @@ package core
 
 import (
 	"FengfengStudy/global"
+	"FengfengStudy/models/orm/dal"
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
@@ -29,10 +30,13 @@ func BuildGen() *gorm.DB {
 	})
 	// 使用数据库
 	g.UseDB(db)
-	// 生成所有表的DAO接口
-	g.ApplyBasic(g.GenerateAllTable()...)
+	// 生成所有表的DAO接口 配置文件修改
+	if global.Config.CreateDB.IsCreate {
+		g.ApplyBasic(g.GenerateAllTable()...)
+	}
 	g.Execute()
 	//log.Println("<-----------gen success----------->")
 	logrus.Info("gen init success")
+	dal.SetDefault(db)
 	return db
 }
