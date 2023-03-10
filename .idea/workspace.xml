@@ -5,34 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/api/enter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/setting_api/enter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/setting_api/settings_info.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/course.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/permission.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/products.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/role.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/role_permission.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/upload_history.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/user.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/user_role.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/dal/worklist.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/course.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/permission.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/products.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/role.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/role_permission.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/upload_history.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/user.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/user_role.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/orm/model/worklist.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/settings_router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/conf_system.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf_system.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build_gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/build_gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/setting_api/settings_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/setting_api/settings_info.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/conf_createDBConf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf_createDBConf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/genConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/genConfig.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.sql" beforeDir="false" afterPath="$PROJECT_DIR$/file.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/res/err_code.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/res/err_code.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/res/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/res/response.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,25 +46,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "configurable..is.expanded": "true",
-    "configurable.GoLibrariesConfigurable.is.expanded": "true",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/home/dbeidachazi/GolandProjects/FengfengStudy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;configurable..is.expanded&quot;: &quot;true&quot;,
+    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dbeidachazi/GolandProjects/FengfengStudy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.maddyhome.idea.vim.ui.VimEmulationConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />

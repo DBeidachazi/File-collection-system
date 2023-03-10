@@ -1,7 +1,7 @@
 mysql:
   host: 127.0.0.1
   port: 3306
-  db: gorm
+  db: file
   user: root
   password: a
   log_level: dev
@@ -16,3 +16,5 @@ system:
   port: 8080
 #  env: dev
   env: release
+create_db:
+  is_create: false
