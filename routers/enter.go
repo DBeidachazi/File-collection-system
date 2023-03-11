@@ -10,5 +10,7 @@ func InitRouter() *gin.Engine {
 	router := gin.Default()
 	// 系统配置api
 	InitSettingsRouter(router)
+	InitUserLoginRouter(router)
+	InitUserRegisterRouter(router)
 	return router
 }

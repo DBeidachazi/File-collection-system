@@ -29,7 +29,7 @@ create table `class_user`
 
 # 仅管理员可发布
 # 作业新增
-# todo 截止时间
+
 drop table if exists `course`;
 create table `course`
 (

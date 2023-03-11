@@ -13,6 +13,7 @@ func main() {
 	global.Log = core.InitLogger()
 	// 生成数据库代码 + 连接数据库
 	global.DB = core.BuildGen()
+
 	router := routers.InitRouter()
 
 	addr := global.Config.System.GetHost()
@@ -22,4 +23,5 @@ func main() {
 		global.Log.Errorln(err)
 		return
 	}
+
 }
