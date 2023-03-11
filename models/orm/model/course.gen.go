@@ -4,14 +4,19 @@
 
 package model
 
+import (
+	"time"
+)
+
 const TableNameCourse = "course"
 
 // Course mapped from table <course>
 type Course struct {
-	CourseID      int32  `gorm:"column:course_id;primaryKey;autoIncrement:true" json:"course_id"`
-	Name          string `gorm:"column:name;not null" json:"name"`
-	ClassID       int32  `gorm:"column:class_id;not null" json:"class_id"`
-	PublisherName string `gorm:"column:publisher_name;not null" json:"publisher_name"`
+	CourseID      int32     `gorm:"column:course_id;primaryKey;autoIncrement:true" json:"course_id"`
+	Name          string    `gorm:"column:name;not null" json:"name"`
+	ClassID       int32     `gorm:"column:class_id;not null" json:"class_id"`
+	PublisherName string    `gorm:"column:publisher_name;not null" json:"publisher_name"`
+	Deadline      time.Time `gorm:"column:deadline" json:"deadline"` // 截止时间
 }
 
 // TableName Course's table name

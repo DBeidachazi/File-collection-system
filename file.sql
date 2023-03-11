@@ -1,3 +1,4 @@
+use file;
 drop table if exists `user`;
 create table `user`
 (
@@ -7,7 +8,7 @@ create table `user`
     primary key (`stu_id`)
 ) engine=innodb default charset=utf8mb4;
 
--- # 班级表
+# 班级表
 drop table if exists `class`;
 create table `class`
 (
@@ -15,22 +16,20 @@ create table `class`
     `name`     varchar(255) not null,
     primary key (`class_id`)
 ) engine=innodb default charset=utf8mb4;
-
--- #
--- 班级用户表
+# 班级用户表
 drop table if exists `class_user`;
 create table `class_user`
 (
     `class_id`        int(4) not null,
     `stu_id`          int(11) not null,
     `name`            varchar(255) not null,
-    `permission_type` int(11) not null comment '1:创建班级 2:加入班级 可以设置多个管理',
-    primary key (`class_id`, `stu_id`)
+    `permission_type` int(11) not null comment '1:管理员 2:普通用户'
+#     primary key (`class_id`, `stu_id`)
 ) engine=innodb default charset=utf8mb4;
 
--- #
--- 仅管理员可发布
--- # 作业新增
+# 仅管理员可发布
+# 作业新增
+# todo 截止时间
 drop table if exists `course`;
 create table `course`
 (
@@ -38,17 +37,19 @@ create table `course`
     `name`           varchar(255) not null,
     `class_id`       int(4) not null,
     `publisher_name` varchar(255) not null,
+    `deadline`       datetime default null comment '截止时间',
     primary key (`course_id`)
 ) engine=innodb default charset=utf8mb4;
 
 -- 作业清单
 drop table if exists `role`;
 create table `role`(
-    `user_id` int(11) not null,
-    `role_id` int (11) not null auto_increment,
-    `role_name` varchar(255) not null,
-    `class_id` int(4) not null,
-    `status` int(11) not null comment '1:已提交 2:未提交 3:发布者(不显示)'
+                       `user_id` int(11) not null,
+                       `role_id` int (11) not null auto_increment,
+                       `role_name` varchar(255) not null,
+                       `class_id` int(4) not null,
+                       `status` int(11) not null comment '1:已提交 2:未提交 3:发布者(不显示)',
+                       primary key (`role_id`)
 ) engine=innodb default charset=utf8mb4;
 
 -- 作业管理

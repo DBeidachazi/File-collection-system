@@ -7,6 +7,7 @@ import (
 )
 
 func (SettingsApi) SettingsInfoView(c *gin.Context) {
+	// todo 样例
 	//res.Ok(map[string]string{}, "成功", c)
 	//res.OkWithData(map[string]string{
 	//	"test":  "test",
