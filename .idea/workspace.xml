@@ -5,14 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/routers/class_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/classuser_create.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/setting_api/settings_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/setting_api/settings_info.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/conf_createDBConf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf_createDBConf.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/genConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/genConfig.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.sql" beforeDir="false" afterPath="$PROJECT_DIR$/file.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/res/err_code.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/res/err_code.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/res/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/res/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/class_api/class_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/class_api/class_create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/classuser_api/classuser_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/classuser_api/classuser_create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/enter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user_api/user_register.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api/user_register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/dal/class.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/class.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/dal/class_user.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/class_user.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/dal/course.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/course.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/dal/role.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/role.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/dal/user.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/user.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/dal/worklist.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/worklist.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/model/class.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/class.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/model/class_user.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/class_user.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/model/course.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/course.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/model/role.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/role.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/model/user.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/user.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/orm/model/worklist.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/worklist.gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,10 +111,36 @@
       <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="FengfengStudy/utils/pwd 中的 TestCheckPwd" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="FengfengStudy" />
+      <working_directory value="$PROJECT_DIR$/utils/pwd" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="FengfengStudy/utils/pwd" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestCheckPwd\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FengfengStudy/utils/pwd 中的 TestHashPwd" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="FengfengStudy" />
+      <working_directory value="$PROJECT_DIR$/utils/pwd" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="FengfengStudy/utils/pwd" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestHashPwd\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go 构建.go build FengfengStudy" />
         <item itemvalue="Go 构建.go build main.go" />
+        <item itemvalue="Go 测试.FengfengStudy/utils/pwd 中的 TestCheckPwd" />
+        <item itemvalue="Go 测试.FengfengStudy/utils/pwd 中的 TestHashPwd" />
         <item itemvalue="Go 构建.go build conf.go" />
       </list>
     </recent_temporary>
@@ -130,7 +168,11 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="Read settings.yaml" />
     <MESSAGE value="配置初始化，日志初始化，gorm初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置初始化，日志初始化，gorm初始化" />
+    <MESSAGE value="驱动dal" />
+    <MESSAGE value="用户登录接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户登录接口" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

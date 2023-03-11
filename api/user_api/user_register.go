@@ -12,7 +12,7 @@ import (
 type UserRegisterRequest struct {
 	StuId    int32  `json:"stu_id" binding:"required"`
 	Password string `json:"password" binding:"required"`
-	Name     string `json:"name" binding:"required"`
+	Username string `json:"name" binding:"required"`
 }
 
 func (UserApi) UserRegisterView(c *gin.Context) {
@@ -34,7 +34,7 @@ func (UserApi) UserRegisterView(c *gin.Context) {
 	// 入库
 	user := model.User{
 		StuID:    req.StuId,
-		Name:     req.Name,
+		Username: req.Username,
 		Password: pwd.HashPwd(req.Password),
 	}
 	err = dal.User.Create(&user)

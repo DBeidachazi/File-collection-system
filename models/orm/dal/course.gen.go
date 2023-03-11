@@ -28,7 +28,7 @@ func newCourse(db *gorm.DB, opts ...gen.DOOption) course {
 	tableName := _course.courseDo.TableName()
 	_course.ALL = field.NewAsterisk(tableName)
 	_course.CourseID = field.NewInt32(tableName, "course_id")
-	_course.Name = field.NewString(tableName, "name")
+	_course.Username = field.NewString(tableName, "username")
 	_course.ClassID = field.NewInt32(tableName, "class_id")
 	_course.PublisherName = field.NewString(tableName, "publisher_name")
 	_course.Deadline = field.NewTime(tableName, "deadline")
@@ -43,7 +43,7 @@ type course struct {
 
 	ALL           field.Asterisk
 	CourseID      field.Int32
-	Name          field.String
+	Username      field.String
 	ClassID       field.Int32
 	PublisherName field.String
 	Deadline      field.Time // 截止时间
@@ -64,7 +64,7 @@ func (c course) As(alias string) *course {
 func (c *course) updateTableName(table string) *course {
 	c.ALL = field.NewAsterisk(table)
 	c.CourseID = field.NewInt32(table, "course_id")
-	c.Name = field.NewString(table, "name")
+	c.Username = field.NewString(table, "username")
 	c.ClassID = field.NewInt32(table, "class_id")
 	c.PublisherName = field.NewString(table, "publisher_name")
 	c.Deadline = field.NewTime(table, "deadline")
@@ -86,7 +86,7 @@ func (c *course) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 func (c *course) fillFieldMap() {
 	c.fieldMap = make(map[string]field.Expr, 5)
 	c.fieldMap["course_id"] = c.CourseID
-	c.fieldMap["name"] = c.Name
+	c.fieldMap["username"] = c.Username
 	c.fieldMap["class_id"] = c.ClassID
 	c.fieldMap["publisher_name"] = c.PublisherName
 	c.fieldMap["deadline"] = c.Deadline

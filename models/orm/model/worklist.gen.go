@@ -10,7 +10,7 @@ const TableNameWorklist = "worklist"
 type Worklist struct {
 	WorkID   int32  `gorm:"column:work_id;primaryKey;autoIncrement:true" json:"work_id"`
 	CourseID int32  `gorm:"column:course_id;not null" json:"course_id"`
-	Name     string `gorm:"column:name;not null" json:"name"`
+	Username string `gorm:"column:username;not null" json:"username"`
 	Path     string `gorm:"column:path;not null" json:"path"`
 	Status   int32  `gorm:"column:status;not null" json:"status"` // 提交人数
 }
