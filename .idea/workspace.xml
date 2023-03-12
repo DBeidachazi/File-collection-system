@@ -4,28 +4,23 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/routers/class_create.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/classuser_create.go" afterDir="false" />
+    <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="用户修改权限">
+      <change afterPath="$PROJECT_DIR$/api/classuser_api/classuser_modify.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/course_api/course_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/course_api/enter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/classuser_modify.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/course_create.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/class_api/class_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/class_api/class_create.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/classuser_api/classuser_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/classuser_api/classuser_create.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/enter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user_api/user_register.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api/user_register.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/orm/dal/class.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/class.gen.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/orm/dal/class_user.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/class_user.gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/orm/dal/course.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/course.gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/orm/dal/role.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/role.gen.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/orm/dal/user.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/user.gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/orm/dal/worklist.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/dal/worklist.gen.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/orm/model/class.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/class.gen.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/orm/model/class_user.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/class_user.gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/orm/model/course.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/course.gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/orm/model/role.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/role.gen.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/orm/model/user.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/user.gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/orm/model/worklist.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/orm/model/worklist.gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +165,8 @@
     <MESSAGE value="配置初始化，日志初始化，gorm初始化" />
     <MESSAGE value="驱动dal" />
     <MESSAGE value="用户登录接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户登录接口" />
+    <MESSAGE value="班级创建" />
+    <option name="LAST_COMMIT_MESSAGE" value="班级创建" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

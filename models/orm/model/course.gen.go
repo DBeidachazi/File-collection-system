@@ -12,11 +12,12 @@ const TableNameCourse = "course"
 
 // Course mapped from table <course>
 type Course struct {
-	CourseID      int32     `gorm:"column:course_id;primaryKey;autoIncrement:true" json:"course_id"`
-	Username      string    `gorm:"column:username;not null" json:"username"`
-	ClassID       int32     `gorm:"column:class_id;not null" json:"class_id"`
-	PublisherName string    `gorm:"column:publisher_name;not null" json:"publisher_name"`
-	Deadline      time.Time `gorm:"column:deadline" json:"deadline"` // 截止时间
+	CourseID   int32     `gorm:"column:course_id;primaryKey;autoIncrement:true" json:"course_id"`
+	CourseName string    `gorm:"column:course_name;not null" json:"course_name"`
+	ClassID    int32     `gorm:"column:class_id;not null" json:"class_id"`
+	Username   string    `gorm:"column:username;not null" json:"username"` // 发布者名
+	Deadline   time.Time `gorm:"column:deadline" json:"deadline"`          // 截止时间
+	StuID      int32     `gorm:"column:stu_id;not null" json:"stu_id"`     // 发布者id
 }
 
 // TableName Course's table name

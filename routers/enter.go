@@ -14,5 +14,7 @@ func InitRouter() *gin.Engine {
 	InitUserRegisterRouter(router)
 	InitClassCreate(router)
 	InitClassUserCreate(router)
+	InitClassUserModify(router)
+	InitCourseCreate(router)
 	return router
 }

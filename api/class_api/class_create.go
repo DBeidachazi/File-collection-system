@@ -12,14 +12,12 @@ import (
 type ClassCreateRequest struct {
 	ClassId   int32  `json:"classId" bind:"required"`
 	StuId     int32  `json:"stuId" bind:"required"`
-	ClassName string `json:"name" bind:"required"`
+	ClassName string `json:"className" bind:"required"`
 }
 
 func (ClassApi) CreateClassView(c *gin.Context) {
 	var req ClassCreateRequest
 	err := c.ShouldBindJSON(&req)
-
-	err = c.ShouldBindJSON(&req)
 	if err != nil {
 		return
 	}
@@ -51,7 +49,7 @@ func (ClassApi) CreateClassView(c *gin.Context) {
 		return
 	} else {
 		// 传入班级id，用户id，权限，用户姓名
-		classuser_api.UserJoinClass(c, req.ClassId, req.StuId, 1, name.Username)
+		classuser_api.UserJoinClass(req.ClassId, req.StuId, 2, name.Username)
 		global.Log.Infoln(req.ClassId, "创建班级成功")
 		res.OkWithMessage("创建班级成功", c)
 	}

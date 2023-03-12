@@ -29,8 +29,7 @@ func newWorklist(db *gorm.DB, opts ...gen.DOOption) worklist {
 	_worklist.ALL = field.NewAsterisk(tableName)
 	_worklist.WorkID = field.NewInt32(tableName, "work_id")
 	_worklist.CourseID = field.NewInt32(tableName, "course_id")
-	_worklist.Username = field.NewString(tableName, "username")
-	_worklist.Path = field.NewString(tableName, "path")
+	_worklist.CourseName = field.NewString(tableName, "course_name")
 	_worklist.Status = field.NewInt32(tableName, "status")
 
 	_worklist.fillFieldMap()
@@ -41,12 +40,11 @@ func newWorklist(db *gorm.DB, opts ...gen.DOOption) worklist {
 type worklist struct {
 	worklistDo
 
-	ALL      field.Asterisk
-	WorkID   field.Int32
-	CourseID field.Int32
-	Username field.String
-	Path     field.String
-	Status   field.Int32 // 提交人数
+	ALL        field.Asterisk
+	WorkID     field.Int32  // 工作流水号
+	CourseID   field.Int32  // 任务id
+	CourseName field.String // 任务名称
+	Status     field.Int32  // 提交人数
 
 	fieldMap map[string]field.Expr
 }
@@ -65,8 +63,7 @@ func (w *worklist) updateTableName(table string) *worklist {
 	w.ALL = field.NewAsterisk(table)
 	w.WorkID = field.NewInt32(table, "work_id")
 	w.CourseID = field.NewInt32(table, "course_id")
-	w.Username = field.NewString(table, "username")
-	w.Path = field.NewString(table, "path")
+	w.CourseName = field.NewString(table, "course_name")
 	w.Status = field.NewInt32(table, "status")
 
 	w.fillFieldMap()
@@ -84,11 +81,10 @@ func (w *worklist) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (w *worklist) fillFieldMap() {
-	w.fieldMap = make(map[string]field.Expr, 5)
+	w.fieldMap = make(map[string]field.Expr, 4)
 	w.fieldMap["work_id"] = w.WorkID
 	w.fieldMap["course_id"] = w.CourseID
-	w.fieldMap["username"] = w.Username
-	w.fieldMap["path"] = w.Path
+	w.fieldMap["course_name"] = w.CourseName
 	w.fieldMap["status"] = w.Status
 }
 

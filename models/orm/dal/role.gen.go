@@ -42,11 +42,11 @@ type role struct {
 	roleDo
 
 	ALL      field.Asterisk
-	StuID    field.Int32
-	RoleID   field.Int32
-	RoleName field.String
-	ClassID  field.Int32
-	Status   field.Int32 // 1:已提交 2:未提交 3:发布者(不显示)
+	StuID    field.Int32  // 用户id
+	RoleID   field.Int32  // 任务id
+	RoleName field.String // 任务名(course_name)
+	ClassID  field.Int32  // class_id
+	Status   field.Int32  // 1:已提交 2:未提交 3:发布者(不显示)
 
 	fieldMap map[string]field.Expr
 }
