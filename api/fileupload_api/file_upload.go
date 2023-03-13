@@ -8,11 +8,12 @@ import (
 	"strconv"
 )
 
-// todo role.status 修改状态
+// todo role.status 修改状态 done
+// todo 如果用户在course创建后加入班级，应该在role中给他创建此班级的所有course记录 done
 func (FileUploadApi) FileUploadView(c *gin.Context) {
-	classId := c.Param("classid")
-	stuId := c.Param("stuid")
-	courseId := c.Param("courseid")
+	classId := c.Param("classid")   // 班级id
+	stuId := c.Param("stuid")       // 上传者id
+	courseId := c.Param("courseid") // 课程id
 
 	searchFileType, err := dal.Course.Where(dal.Course.ClassID.Eq(trans(classId)), dal.Course.CourseID.Eq(trans(courseId))).First()
 	if err != nil {
@@ -36,6 +37,21 @@ func (FileUploadApi) FileUploadView(c *gin.Context) {
 		return
 	}
 
+	stuRole, err := dal.Role.Where(dal.Role.StuID.Eq(trans(stuId)), dal.Role.CourseID.Eq(trans(courseId))).First()
+	if stuRole.Status == 2 {
+		// 修改worklist.status
+		worklist := dal.Worklist.Where(dal.Worklist.CourseID.Eq(trans(courseId)))
+		statusNum, _ := worklist.First()
+		_, err = worklist.Update(dal.Worklist.Status, statusNum.Status+1)
+	}
+
+	// 修改role.status
+	_, err = dal.Role.Where(dal.Role.StuID.Eq(trans(stuId)), dal.Role.CourseID.Eq(trans(courseId))).Update(dal.Role.Status, 1)
+	if err != nil {
+		global.Log.Warnln("修改role.status失败", err)
+		res.FailWithMessage("修改role.status失败", c)
+		return
+	}
 	global.Log.Infoln("文件上传成功", classId, courseId)
 	res.OkWithMessage("文件上传成功", c)
 	return

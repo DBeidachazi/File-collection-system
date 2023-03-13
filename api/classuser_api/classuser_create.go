@@ -38,6 +38,18 @@ func (ClassUserApi) CreateClassUserView(c *gin.Context) {
 	if err != nil {
 		// 用户未加入班级
 		UserJoinClass(req.ClassId, req.StuId, 0, stu.Username) // 默认权限为0
+		findAllCourse, _ := dal.Course.Where(dal.Course.ClassID.Eq(req.ClassId)).Find()
+		for _, v := range findAllCourse {
+			// 用户加入班级后，自动加入课程
+			dal.Role.Create(&model.Role{
+				StuID:    req.StuId,
+				RoleName: v.CourseName,
+				ClassID:  req.ClassId,
+				Status:   2,
+				Deadline: v.Deadline,
+				CourseID: v.CourseID,
+			})
+		}
 		res.OkWithMessage("用户加入班级成功", c)
 		return
 	} else {

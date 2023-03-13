@@ -18,5 +18,6 @@ func InitRouter() *gin.Engine {
 	InitClassUserModify(router)
 	InitCourseCreate(router)
 	InitFileUpload(router)
+	InitFileDownload(router)
 	return router
 }
