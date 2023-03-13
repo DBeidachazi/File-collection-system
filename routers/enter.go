@@ -8,6 +8,7 @@ import (
 func InitRouter() *gin.Engine {
 	gin.SetMode(global.Config.System.Env)
 	router := gin.Default()
+	router.MaxMultipartMemory = global.Config.FileSize.Size << 20
 	// 系统配置api
 	InitSettingsRouter(router)
 	InitUserLoginRouter(router)
@@ -16,5 +17,6 @@ func InitRouter() *gin.Engine {
 	InitClassUserCreate(router)
 	InitClassUserModify(router)
 	InitCourseCreate(router)
+	InitFileUpload(router)
 	return router
 }

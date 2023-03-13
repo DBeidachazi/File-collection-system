@@ -19,4 +19,6 @@ system:
 # true 生成数据库
 # false 不生成数据库
 create_db:
-  is_create: false
+  is_create: true
+file_size:
+  size: 15 # 单位M

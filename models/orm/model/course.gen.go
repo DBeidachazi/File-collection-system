@@ -18,6 +18,7 @@ type Course struct {
 	Username   string    `gorm:"column:username;not null" json:"username"` // 发布者名
 	Deadline   time.Time `gorm:"column:deadline" json:"deadline"`          // 截止时间
 	StuID      int32     `gorm:"column:stu_id;not null" json:"stu_id"`     // 发布者id
+	FileType   string    `gorm:"column:file_type;not null" json:"file_type"`
 }
 
 // TableName Course's table name

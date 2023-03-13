@@ -15,6 +15,7 @@ type CourseCreateRequest struct {
 	ClassId    int32  `json:"classId" bind:"required"`
 	Username   string `json:"username" bind:"required"`
 	Deadline   string `json:"deadline" bind:"required"` // 截止时间 "2020-12-12 12:12:12"
+	FileType   string `json:"fileType" bind:"required"`
 }
 
 func (CourseApi) CreateCourseView(c *gin.Context) {
@@ -38,6 +39,13 @@ func (CourseApi) CreateCourseView(c *gin.Context) {
 		res.FailWithMessage("用户没有权限创建课程", c)
 		return
 	}
+	// 查看课程是否已经存在
+	_, err = dal.Course.Where(dal.Course.CourseName.Eq(req.CourseName), dal.Course.ClassID.Eq(req.ClassId)).First()
+	if err == nil {
+		global.Log.Warnln("课程已经存在", req.CourseName, req.ClassId)
+		res.FailWithMessage("课程已经存在", c)
+		return
+	}
 	// 入库
 	t, err := time.Parse("2006-01-02 15:04:05", req.Deadline)
 	if err != nil {
@@ -51,6 +59,7 @@ func (CourseApi) CreateCourseView(c *gin.Context) {
 		Username:   req.Username,
 		Deadline:   t,
 		StuID:      req.StuId,
+		FileType:   req.FileType,
 	}
 	err = dal.Course.Create(&course)
 	if err != nil {
@@ -60,11 +69,13 @@ func (CourseApi) CreateCourseView(c *gin.Context) {
 	}
 	global.Log.Infoln(req.StuId, req.CourseName, "创建课程成功")
 	// 向role中插入 该班级的所有学生的这门课程数据
-	InsertIntoRole(&course, c)
+	InsertIntoRoleAndWorklist(&course, c, &t)
 	res.OkWithMessage("创建课程成功", c)
 	return
 }
-func InsertIntoRole(course *model.Course, c *gin.Context) {
+func InsertIntoRoleAndWorklist(course *model.Course, c *gin.Context, t *time.Time) {
+	findCreateCourse, err := dal.Course.Where(dal.Course.StuID.Eq(course.StuID), dal.Course.CourseName.Eq(course.CourseName), dal.Course.ClassID.Eq(course.ClassID)).First()
+	courseId := findCreateCourse.CourseID
 	findAllUser, err := dal.ClassUser.Where(dal.ClassUser.ClassID.Eq(course.ClassID)).Find()
 	if err != nil {
 		return
@@ -82,6 +93,8 @@ func InsertIntoRole(course *model.Course, c *gin.Context) {
 			RoleName: course.CourseName,
 			ClassID:  v.ClassID,
 			Status:   status,
+			Deadline: *t,
+			CourseID: courseId,
 		}
 		err = dal.Role.Create(&role)
 		if err != nil {
@@ -91,4 +104,20 @@ func InsertIntoRole(course *model.Course, c *gin.Context) {
 		}
 	}
 	global.Log.Infoln("role入库成功")
+
+	// worklist 创建
+	worklist := model.Worklist{
+		CourseID:   course.CourseID,
+		CourseName: course.CourseName,
+		Status:     0,
+		StuID:      course.StuID,
+		Deadline:   *t,
+	}
+	err = dal.Worklist.Create(&worklist)
+	if err != nil {
+		global.Log.Warnln("worklist入库失败", err)
+		res.FailWithMessage("worklist入库失败", c)
+		return
+	}
+	global.Log.Infoln("worklist入库成功")
 }

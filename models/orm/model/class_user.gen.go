@@ -11,7 +11,7 @@ type ClassUser struct {
 	ClassID        int32  `gorm:"column:class_id;not null" json:"class_id"`
 	StuID          int32  `gorm:"column:stu_id;not null" json:"stu_id"`
 	Username       string `gorm:"column:username;not null" json:"username"`
-	PermissionType int32  `gorm:"column:permission_type;not null" json:"permission_type"` // 1:管理员 2:普通用户
+	PermissionType int32  `gorm:"column:permission_type;not null" json:"permission_type"` // 0:普通用户 1:管理员 2: 班级创建者
 }
 
 // TableName ClassUser's table name

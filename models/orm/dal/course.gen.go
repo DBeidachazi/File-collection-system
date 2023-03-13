@@ -33,6 +33,7 @@ func newCourse(db *gorm.DB, opts ...gen.DOOption) course {
 	_course.Username = field.NewString(tableName, "username")
 	_course.Deadline = field.NewTime(tableName, "deadline")
 	_course.StuID = field.NewInt32(tableName, "stu_id")
+	_course.FileType = field.NewString(tableName, "file_type")
 
 	_course.fillFieldMap()
 
@@ -49,6 +50,7 @@ type course struct {
 	Username   field.String // 发布者名
 	Deadline   field.Time   // 截止时间
 	StuID      field.Int32  // 发布者id
+	FileType   field.String
 
 	fieldMap map[string]field.Expr
 }
@@ -71,6 +73,7 @@ func (c *course) updateTableName(table string) *course {
 	c.Username = field.NewString(table, "username")
 	c.Deadline = field.NewTime(table, "deadline")
 	c.StuID = field.NewInt32(table, "stu_id")
+	c.FileType = field.NewString(table, "file_type")
 
 	c.fillFieldMap()
 
@@ -87,13 +90,14 @@ func (c *course) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (c *course) fillFieldMap() {
-	c.fieldMap = make(map[string]field.Expr, 6)
+	c.fieldMap = make(map[string]field.Expr, 7)
 	c.fieldMap["course_id"] = c.CourseID
 	c.fieldMap["course_name"] = c.CourseName
 	c.fieldMap["class_id"] = c.ClassID
 	c.fieldMap["username"] = c.Username
 	c.fieldMap["deadline"] = c.Deadline
 	c.fieldMap["stu_id"] = c.StuID
+	c.fieldMap["file_type"] = c.FileType
 }
 
 func (c course) clone(db *gorm.DB) course {

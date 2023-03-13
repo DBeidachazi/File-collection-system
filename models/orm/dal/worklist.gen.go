@@ -31,6 +31,8 @@ func newWorklist(db *gorm.DB, opts ...gen.DOOption) worklist {
 	_worklist.CourseID = field.NewInt32(tableName, "course_id")
 	_worklist.CourseName = field.NewString(tableName, "course_name")
 	_worklist.Status = field.NewInt32(tableName, "status")
+	_worklist.StuID = field.NewInt32(tableName, "stu_id")
+	_worklist.Deadline = field.NewTime(tableName, "deadline")
 
 	_worklist.fillFieldMap()
 
@@ -45,6 +47,8 @@ type worklist struct {
 	CourseID   field.Int32  // 任务id
 	CourseName field.String // 任务名称
 	Status     field.Int32  // 提交人数
+	StuID      field.Int32
+	Deadline   field.Time
 
 	fieldMap map[string]field.Expr
 }
@@ -65,6 +69,8 @@ func (w *worklist) updateTableName(table string) *worklist {
 	w.CourseID = field.NewInt32(table, "course_id")
 	w.CourseName = field.NewString(table, "course_name")
 	w.Status = field.NewInt32(table, "status")
+	w.StuID = field.NewInt32(table, "stu_id")
+	w.Deadline = field.NewTime(table, "deadline")
 
 	w.fillFieldMap()
 
@@ -81,11 +87,13 @@ func (w *worklist) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (w *worklist) fillFieldMap() {
-	w.fieldMap = make(map[string]field.Expr, 4)
+	w.fieldMap = make(map[string]field.Expr, 6)
 	w.fieldMap["work_id"] = w.WorkID
 	w.fieldMap["course_id"] = w.CourseID
 	w.fieldMap["course_name"] = w.CourseName
 	w.fieldMap["status"] = w.Status
+	w.fieldMap["stu_id"] = w.StuID
+	w.fieldMap["deadline"] = w.Deadline
 }
 
 func (w worklist) clone(db *gorm.DB) worklist {

@@ -1,6 +1,8 @@
 package config
 
-import "strconv"
+import (
+	"strconv"
+)
 
 type Mysql struct {
 	Host     string `yaml:"host"`
@@ -13,5 +15,5 @@ type Mysql struct {
 }
 
 func (m *Mysql) Dsn() string {
-	return m.User + ":" + m.Password + "@tcp(" + m.Host + ":" + strconv.Itoa(m.Port) + ")/" + m.DB + m.Config
+	return m.User + ":" + m.Password + "@tcp(" + m.Host + ":" + strconv.Itoa(m.Port) + ")/" + m.DB + m.Config + "?charset=utf8mb4&parseTime=True&loc=Local"
 }

@@ -32,6 +32,8 @@ func newRole(db *gorm.DB, opts ...gen.DOOption) role {
 	_role.RoleName = field.NewString(tableName, "role_name")
 	_role.ClassID = field.NewInt32(tableName, "class_id")
 	_role.Status = field.NewInt32(tableName, "status")
+	_role.Deadline = field.NewTime(tableName, "deadline")
+	_role.CourseID = field.NewInt32(tableName, "course_id")
 
 	_role.fillFieldMap()
 
@@ -47,6 +49,8 @@ type role struct {
 	RoleName field.String // 任务名(course_name)
 	ClassID  field.Int32  // class_id
 	Status   field.Int32  // 1:已提交 2:未提交 3:发布者(不显示)
+	Deadline field.Time   // 截止时间
+	CourseID field.Int32  // 课程id
 
 	fieldMap map[string]field.Expr
 }
@@ -68,6 +72,8 @@ func (r *role) updateTableName(table string) *role {
 	r.RoleName = field.NewString(table, "role_name")
 	r.ClassID = field.NewInt32(table, "class_id")
 	r.Status = field.NewInt32(table, "status")
+	r.Deadline = field.NewTime(table, "deadline")
+	r.CourseID = field.NewInt32(table, "course_id")
 
 	r.fillFieldMap()
 
@@ -84,12 +90,14 @@ func (r *role) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (r *role) fillFieldMap() {
-	r.fieldMap = make(map[string]field.Expr, 5)
+	r.fieldMap = make(map[string]field.Expr, 7)
 	r.fieldMap["stu_id"] = r.StuID
 	r.fieldMap["role_id"] = r.RoleID
 	r.fieldMap["role_name"] = r.RoleName
 	r.fieldMap["class_id"] = r.ClassID
 	r.fieldMap["status"] = r.Status
+	r.fieldMap["deadline"] = r.Deadline
+	r.fieldMap["course_id"] = r.CourseID
 }
 
 func (r role) clone(db *gorm.DB) role {

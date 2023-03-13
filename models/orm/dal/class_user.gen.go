@@ -44,7 +44,7 @@ type classUser struct {
 	ClassID        field.Int32
 	StuID          field.Int32
 	Username       field.String
-	PermissionType field.Int32 // 1:管理员 2:普通用户
+	PermissionType field.Int32 // 0:普通用户 1:管理员 2: 班级创建者
 
 	fieldMap map[string]field.Expr
 }
