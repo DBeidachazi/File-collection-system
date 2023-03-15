@@ -4,26 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="文件上传">
-      <change afterPath="$PROJECT_DIR$/api/filedownload_api/enter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/filedownload_api/file_download.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/file_donwload.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testdata/archiver_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testdata/fileupload_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/classuser_api/classuser_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/classuser_api/classuser_create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/enter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/fileupload_api/file_upload.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/fileupload_api/file_upload.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/1234/16/1234_20212320.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/1234/16/1234_20212322.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/1234/17/1234_20212320.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/1234/17/1234_20212322.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/1235/20/1235_20212320.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +136,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.py" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -178,7 +163,8 @@
     <MESSAGE value="班级创建" />
     <MESSAGE value="课程添加" />
     <MESSAGE value="文件上传" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件上传" />
+    <MESSAGE value="文件下载" />
+    <option name="LAST_COMMIT_MESSAGE" value="文件下载" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
