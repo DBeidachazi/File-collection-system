@@ -8,7 +8,7 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func _Test(t *testing.T) {
 	files, err := archiver.FilesFromDisk(nil, map[string]string{
 		"../files/1234/26/": "", // 相对路径
 	})

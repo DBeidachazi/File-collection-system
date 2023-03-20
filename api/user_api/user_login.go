@@ -4,6 +4,7 @@ import (
 	"FengfengStudy/global"
 	"FengfengStudy/models/orm/dal"
 	"FengfengStudy/models/res"
+	"FengfengStudy/utils/jwts"
 	"FengfengStudy/utils/pwd"
 	"github.com/gin-gonic/gin"
 )
@@ -18,6 +19,9 @@ func (UserApi) UserLoginView(c *gin.Context) {
 	var req UserLoginRequest
 	err := c.ShouldBindJSON(&req)
 	if err != nil {
+		global.Log.Warnln(err, req)
+		global.Log.Warnln("参数绑定失败")
+		res.FailWithMessage("参数绑定失败", c)
 		return
 	}
 
@@ -36,6 +40,17 @@ func (UserApi) UserLoginView(c *gin.Context) {
 		return
 	}
 	// 登陆成功
+	token, err := jwts.GenToken(jwts.JwtPayLoad{
+		Username: searchId.Username,
+		StuId:    searchId.StuID,
+	})
+	if err != nil {
+		global.Log.Warnln("token生成失败", req.StuId)
+		res.FailWithMessage("token生成失败", c)
+		return
+	}
+	global.Log.Infoln(token)
+	global.Log.Infoln(global.Config.Jwt.Expires)
 	global.Log.Infoln(req.StuId, "登陆成功")
-	res.OkWithMessage("登录成功", c)
+	res.Ok(token, "登陆成功", c)
 }

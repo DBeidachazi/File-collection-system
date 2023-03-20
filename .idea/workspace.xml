@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/api/searchRole_api/enter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/searchRole_api/search_role.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/conf_jwt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/cros.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/search_role.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testdata/done.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testdata/jwt_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/jwts/gen_token.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/jwts/parse_token.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/enter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/fileupload_api/file_upload.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/fileupload_api/file_upload.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user_api/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api/user_login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/genConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/genConfig.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/userlogin_router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/userlogin_router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testdata/archiver_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/archiver_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/jwts/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/jwts/enter.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +106,14 @@
       <filePath value="$PROJECT_DIR$/api/filedownload_api/file_download.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go build jwt.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="FengfengStudy" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/testdata/jwt.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="FengfengStudy/testdata 中的 Test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="FengfengStudy" />
       <working_directory value="$PROJECT_DIR$/testdata" />
@@ -98,17 +124,6 @@
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <pattern value="^\QTest\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="fileupload_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="FengfengStudy" />
-      <working_directory value="$PROJECT_DIR$/testdata" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="FengfengStudy" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/testdata/fileupload_test.go" />
-      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <configuration name="go test FengfengStudy/testdata" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -127,8 +142,8 @@
         <item itemvalue="Go 构建.go build FengfengStudy" />
         <item itemvalue="Go 测试.FengfengStudy/testdata 中的 Test" />
         <item itemvalue="Go 测试.go test FengfengStudy/testdata" />
+        <item itemvalue="Go 构建.go build jwt.go" />
         <item itemvalue="Go 构建.go build file_download.go" />
-        <item itemvalue="Go 测试.fileupload_test.go" />
       </list>
     </recent_temporary>
   </component>

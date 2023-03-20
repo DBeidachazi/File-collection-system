@@ -6,6 +6,7 @@ import (
 	"FengfengStudy/api/course_api"
 	"FengfengStudy/api/filedownload_api"
 	"FengfengStudy/api/fileupload_api"
+	"FengfengStudy/api/searchRole_api"
 	"FengfengStudy/api/setting_api"
 	"FengfengStudy/api/user_api"
 )
@@ -18,6 +19,7 @@ type ApiGroup struct {
 	CourseApi       course_api.CourseApi
 	FileUploadApi   fileupload_api.FileUploadApi
 	FileDownloadApi filedownload_api.FileDownloadApi
+	SearchRoleApi   searchRole_api.SearchRoleApi
 }
 
 var ApiGroupApp = new(ApiGroup)

@@ -6,4 +6,5 @@ type Config struct {
 	System   System   `yaml:"system"`
 	CreateDB CreateDB `yaml:"create_db"`
 	FileSize FileSize `yaml:"file_size"`
+	Jwt      Jwt      `yaml:"jwt"`
 }

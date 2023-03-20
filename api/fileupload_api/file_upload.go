@@ -8,8 +8,6 @@ import (
 	"strconv"
 )
 
-// todo role.status 修改状态 done
-// todo 如果用户在course创建后加入班级，应该在role中给他创建此班级的所有course记录 done
 func (FileUploadApi) FileUploadView(c *gin.Context) {
 	classId := c.Param("classid")   // 班级id
 	stuId := c.Param("stuid")       // 上传者id

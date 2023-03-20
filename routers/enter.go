@@ -8,6 +8,8 @@ import (
 func InitRouter() *gin.Engine {
 	gin.SetMode(global.Config.System.Env)
 	router := gin.Default()
+	// 中间件
+	//router.Use(middleware.Cors())
 	router.MaxMultipartMemory = global.Config.FileSize.Size << 20
 	// 系统配置api
 	InitSettingsRouter(router)
@@ -19,5 +21,6 @@ func InitRouter() *gin.Engine {
 	InitCourseCreate(router)
 	InitFileUpload(router)
 	InitFileDownload(router)
+	InitSearchRole(router)
 	return router
 }

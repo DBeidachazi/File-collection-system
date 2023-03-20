@@ -22,3 +22,7 @@ create_db:
   is_create: false
 file_size:
   size: 15 # 单位M
+jwt:
+  secret: xxxx
+  expires: 2  # 单位小时
+  issuer: "1234"
