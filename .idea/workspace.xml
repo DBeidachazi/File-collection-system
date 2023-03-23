@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/api/searchRole_api/enter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/searchRole_api/search_role.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/conf_jwt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/cros.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/search_role.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testdata/done.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testdata/jwt_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/jwts/gen_token.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/jwts/parse_token.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/class_api/class_search.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/enter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/fileupload_api/file_upload.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/fileupload_api/file_upload.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user_api/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api/user_login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/genConfig.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/genConfig.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/userlogin_router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/userlogin_router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdata/archiver_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/archiver_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/jwts/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/jwts/enter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/course_api/course_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/course_api/course_create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/searchRole_api/search_role.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/searchRole_api/search_role.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +164,8 @@
     <MESSAGE value="课程添加" />
     <MESSAGE value="文件上传" />
     <MESSAGE value="文件下载" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件下载" />
+    <MESSAGE value="searchRole" />
+    <option name="LAST_COMMIT_MESSAGE" value="searchRole" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

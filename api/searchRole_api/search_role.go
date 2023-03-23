@@ -26,10 +26,19 @@ func (SearchRoleApi) SearchRoleView(c *gin.Context) {
 		return
 	}
 
+	for k, v := range findAll {
+		global.Log.Infoln(v)
+		if v.Status == 3 {
+			// fixme a = append(a[:i], a[i+1:]...) // 删除中间1个元素
+			findAll = append(findAll[:k], findAll[k+1:]...)
+			k--
+		}
+	}
+
 	if len(findAll) == 0 {
 		res.FailWithMessage("没有任务", c)
 	} else {
 		res.Ok(findAll, "查询成功", c)
 	}
-
+	// 不包含自己发布的任务
 }

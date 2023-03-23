@@ -82,10 +82,13 @@ func InsertIntoRoleAndWorklist(course *model.Course, c *gin.Context, t *time.Tim
 	}
 	for _, v := range findAllUser {
 		var status int32
-		if v.PermissionType == 2 {
+		//if v.PermissionType == 2 {
+		//	status = 3 // 发布者
+		//} else {
+		status = 2 // 未提交
+		//}
+		if v.StuID == course.StuID {
 			status = 3 // 发布者
-		} else {
-			status = 2 // 未提交
 		}
 		// 构建role
 		role := model.Role{
