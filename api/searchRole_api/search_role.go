@@ -20,25 +20,26 @@ func (SearchRoleApi) SearchRoleView(c *gin.Context) {
 		return
 	}
 
-	findAll, err := dal.Role.Where(dal.Role.StuID.Eq(req.StuId)).Find()
+	findAllRole, err := dal.Role.Where(dal.Role.StuID.Eq(req.StuId)).Find()
 	if err != nil {
 		global.Log.Errorln(err)
 		return
 	}
 
-	for k, v := range findAll {
-		global.Log.Infoln(v)
+	for k := 0; k < len(findAllRole); { // for range 循环在每次循环时都会创建一个新的迭代变量，这个变量会被重新赋值，而不是更新已有变量的值。 在此处，我们需要更新已有变量的值，因此使用传统的 for 循环。
+		v := findAllRole[k]
 		if v.Status == 3 {
-			// fixme a = append(a[:i], a[i+1:]...) // 删除中间1个元素
-			findAll = append(findAll[:k], findAll[k+1:]...)
-			k--
+			// a = append(a[:i], a[i+1:]...) // 删除中间1个元素
+			findAllRole = append(findAllRole[:k], findAllRole[k+1:]...)
+			continue
 		}
+		k++
 	}
 
-	if len(findAll) == 0 {
+	if len(findAllRole) == 0 {
 		res.FailWithMessage("没有任务", c)
 	} else {
-		res.Ok(findAll, "查询成功", c)
+		res.Ok(findAllRole, "查询成功", c)
 	}
 	// 不包含自己发布的任务
 }

@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/api/class_api/class_search.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/course_api/course_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/course_api/course_create.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/searchRole_api/search_role.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/searchRole_api/search_role.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
