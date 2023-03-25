@@ -22,5 +22,7 @@ func InitRouter() *gin.Engine {
 	InitFileUpload(router)
 	InitFileDownload(router)
 	InitSearchRole(router)
+	InitWorklistRouter(router)
+	InitClassSearch(router)
 	return router
 }

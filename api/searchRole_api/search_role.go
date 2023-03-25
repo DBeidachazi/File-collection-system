@@ -16,13 +16,17 @@ func (SearchRoleApi) SearchRoleView(c *gin.Context) {
 	err := c.ShouldBindJSON(&req)
 	global.Log.Infoln(req.StuId)
 	if err != nil {
-		global.Log.Errorln(err)
+		global.Log.Warnln("绑定参数失败")
+		global.Log.Warnln(err)
+		res.FailWithMessage("绑定参数失败", c)
 		return
 	}
 
 	findAllRole, err := dal.Role.Where(dal.Role.StuID.Eq(req.StuId)).Find()
 	if err != nil {
+		global.Log.Warnln("查询任务失败: ", req.StuId)
 		global.Log.Errorln(err)
+		res.FailWithMessage("查询任务失败", c)
 		return
 	}
 

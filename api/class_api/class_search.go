@@ -3,12 +3,13 @@ package class_api
 import (
 	"FengfengStudy/global"
 	"FengfengStudy/models/orm/dal"
+	"FengfengStudy/models/res"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 )
 
 type ClassSearchRequest struct {
-	StuId int32 `json:"stuId bind:required"`
+	StuId int32 `json:"stu_id" bind:"required"`
 }
 
 func (ClassApi) SearchClassView(c *gin.Context) {
@@ -17,14 +18,15 @@ func (ClassApi) SearchClassView(c *gin.Context) {
 	if err != nil {
 		return
 	}
-
-	findClassUser, err := dal.ClassUser.Where(dal.ClassUser.StuID.Eq(req.StuId)).Find()
-	if err != nil {
+	// 找到所有创建的班级
+	findClassUser, err := dal.ClassUser.Where(dal.ClassUser.StuID.Eq(req.StuId), dal.ClassUser.PermissionType.Eq(2)).Find()
+	if err != nil || len(findClassUser) == 0 {
 		global.Log.Warnln("查询班级失败: ", req.StuId)
 		logrus.Warnln("err: ", err)
+		res.FailWithMessage("没有创建班级", c)
 		return
 	}
-	_ = findClassUser
+	res.Ok(findClassUser, "查询班级成功", c)
 	/* todo 班级查询
 	1. 查询班级用户表，获取全部班级id
 	2. 管理权限 0:普通用户 1:管理员 2: 班级创建者 ,
@@ -32,7 +34,6 @@ func (ClassApi) SearchClassView(c *gin.Context) {
 	3. 我管理的班级中
 		1. 如果我是班级创建者，我可以设置管理员
 		2. 如果我是班级创建者或管理员，我可以发布作业
-
 
 	*/
 	// 班级管理
