@@ -35,7 +35,7 @@ func (SearchRoleApi) SearchRoleView(c *gin.Context) {
 		if v.Status == 3 {
 			// a = append(a[:i], a[i+1:]...) // 删除中间1个元素
 			findAllRole = append(findAllRole[:k], findAllRole[k+1:]...)
-			continue
+			break
 		}
 		k++
 	}

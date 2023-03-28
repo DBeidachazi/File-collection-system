@@ -24,5 +24,8 @@ func InitRouter() *gin.Engine {
 	InitSearchRole(router)
 	InitWorklistRouter(router)
 	InitClassSearch(router)
+	InitClassDelete(router)
+	InitClassSearchUser(router)
+	InitClassUserDelete(router)
 	return router
 }

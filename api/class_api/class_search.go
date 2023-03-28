@@ -17,6 +17,7 @@ type ClassResponse struct {
 	ClassName string           `json:"class_name"`
 }
 
+// 仅查询我创建的班级
 func (ClassApi) SearchClassView(c *gin.Context) {
 	var req ClassSearchRequest
 	err := c.ShouldBindJSON(&req)
@@ -33,6 +34,7 @@ func (ClassApi) SearchClassView(c *gin.Context) {
 	}
 	var classResponse []ClassResponse
 	for _, v := range findClassUser {
+		logrus.Infoln(v)
 		findClass, err := dal.Class.Where(dal.Class.ClassID.Eq(v.ClassID)).First()
 		if err != nil {
 			global.Log.Warnln("查询班级失败: ", v.ClassID)

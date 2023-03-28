@@ -17,6 +17,8 @@ func (ClassUserApi) CreateClassUserView(c *gin.Context) {
 	var req CreateClassUserRequest
 	err := c.ShouldBindJSON(&req)
 	if err != nil {
+		global.Log.Warnln("绑定参数失败", err)
+		res.FailWithMessage("绑定参数失败", c)
 		return
 	}
 	// 检测班级和用户是否存在
