@@ -28,6 +28,7 @@ func (FileUploadApi) FileUploadView(c *gin.Context) {
 	fileType := searchFileType.FileType
 	file, _ := c.FormFile("file") // 上传请求参数名？ form-key
 	fileName := classId + "_" + stuId
+
 	dst := "./files/" + classId + "/" + courseId + "/" + fileName + "." + fileType
 	err = c.SaveUploadedFile(file, dst)
 	if err != nil {

@@ -26,6 +26,7 @@ func (CourseApi) CreateCourseView(c *gin.Context) {
 		res.FailWithMessage("参数错误", c)
 		return
 	}
+	global.Log.Infoln(req)
 	// 查看用户是否在班级中
 	userIsInClass, err := dal.ClassUser.Where(dal.ClassUser.StuID.Eq(req.StuId), dal.ClassUser.ClassID.Eq(req.ClassId)).First()
 	if err != nil {
@@ -47,7 +48,7 @@ func (CourseApi) CreateCourseView(c *gin.Context) {
 		return
 	}
 	// 入库
-	t, err := time.Parse("2006-01-02 15:04:05", req.Deadline)
+	t, err := time.ParseInLocation("2006-01-02 15:04:05", req.Deadline, time.Local)
 	if err != nil {
 		global.Log.Warnln("时间格式有误", t, "+", err, "+", req.Deadline)
 		res.FailWithMessage("时间格式有误", c)

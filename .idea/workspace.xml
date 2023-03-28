@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/api/class_api/class_delete.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/classuser_api/classuser_delete.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/classuser_api/classuser_search.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/class_delete.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/classuser_delete.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/classuser_search.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/class_api/class_search.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/class_api/class_search.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/classuser_api/classuser_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/classuser_api/classuser_create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/course_api/course_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/course_api/course_create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/fileupload_api/file_upload.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/fileupload_api/file_upload.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/searchRole_api/search_role.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/searchRole_api/search_role.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +168,8 @@
     <MESSAGE value="查询任务bug修复" />
     <MESSAGE value="班级搜索" />
     <MESSAGE value="修改班级搜索response" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改班级搜索response" />
+    <MESSAGE value="classuser delete search操作&#10;class delete操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="classuser delete search操作&#10;class delete操作" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
