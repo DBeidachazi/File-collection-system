@@ -25,7 +25,7 @@ func (ClassUserApi) ModifyClassUserView(c *gin.Context) {
 		res.FailWithMessage("权限不合法", c)
 		return
 	}
-	// todo 重复 懒得修 能动就行 前端限制
+	// todo 重复
 	classStu, err := dal.ClassUser.Where(dal.ClassUser.ClassID.Eq(req.ClassId), dal.ClassUser.StuID.Eq(req.StuId)).First()
 	if err != nil {
 		global.Log.Warnln("管理员权限不足", req.ClassId, req.StuId)

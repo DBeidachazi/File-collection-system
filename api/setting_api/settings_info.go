@@ -18,6 +18,4 @@ func (SettingsApi) SettingsInfoView(c *gin.Context) {
 		return
 	}
 	res.OkWithData(stuQId, c)
-	//res.FailWithCode(res.SystemError, c)
-
 }

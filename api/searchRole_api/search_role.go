@@ -5,6 +5,7 @@ import (
 	"FengfengStudy/models/orm/dal"
 	"FengfengStudy/models/res"
 	"github.com/gin-gonic/gin"
+	"time"
 )
 
 type SearchRoleRequest struct {
@@ -40,10 +41,47 @@ func (SearchRoleApi) SearchRoleView(c *gin.Context) {
 		k++
 	}
 
+	// todo 优化
+
+	var data []returnRole
+	if len(findAllRole) != 0 {
+		for _, v := range findAllRole {
+			var returnRoleOne returnRole
+			returnRoleOne.StuID = v.StuID
+			returnRoleOne.RoleID = v.RoleID
+			returnRoleOne.RoleName = v.RoleName
+			returnRoleOne.ClassID = v.ClassID
+			returnRoleOne.Status = v.Status
+			returnRoleOne.Deadline = v.Deadline
+			returnRoleOne.CourseID = v.CourseID
+
+			findFileName, err := dal.Course.Where(dal.Course.CourseID.Eq(v.CourseID)).First()
+			if err != nil {
+				return
+			}
+			returnRoleOne.FileType = findFileName.FileType
+
+			data = append(data, returnRoleOne)
+		}
+	}
+
 	if len(findAllRole) == 0 {
-		res.FailWithMessage("没有任务", c)
+		global.Log.Infoln("没有任务: ", req.StuId)
+		res.Fail(data, "没有任务", c)
 	} else {
-		res.Ok(findAllRole, "查询成功", c)
+		global.Log.Infoln("查询成功: ", req.StuId)
+		res.Ok(data, "查询成功", c)
 	}
 	// 不包含自己发布的任务
+}
+
+type returnRole struct {
+	StuID    int32     `gorm:"column:stu_id;not null" json:"stu_id"`                        // 用户id
+	RoleID   int32     `gorm:"column:role_id;primaryKey;autoIncrement:true" json:"role_id"` // 任务id
+	RoleName string    `gorm:"column:role_name;not null" json:"role_name"`                  // 任务名(course_name)
+	ClassID  int32     `gorm:"column:class_id;not null" json:"class_id"`                    // class_id
+	Status   int32     `gorm:"column:status;not null" json:"status"`                        // 1:已提交 2:未提交 3:发布者(不显示)
+	Deadline time.Time `gorm:"column:deadline;not null" json:"deadline"`                    // 截止时间
+	CourseID int32     `gorm:"column:course_id;not null" json:"course_id"`
+	FileType string    `gorm:"column:file_type;not null" json:"file_type"` // 文件类型
 }

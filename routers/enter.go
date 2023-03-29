@@ -27,5 +27,6 @@ func InitRouter() *gin.Engine {
 	InitClassDelete(router)
 	InitClassSearchUser(router)
 	InitClassUserDelete(router)
+	InitCourseDelete(router)
 	return router
 }
