@@ -5,15 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/api/course_api/course_delete.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/course_delete.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/go_build_FengfengStudy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/class/class_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/class/class_delete.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/class/class_search.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/class/group_class.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/classuser/classuser_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/classuser/classuser_delete.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/classuser/classuser_modify.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/classuser/classuser_search.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/classuser/group_classuser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/course/course_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/course/course_delete.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/course/group_course.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/file/file_donwload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/file/file_upload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/file/group_file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/role/group_role.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/role/role_search.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/user/group_user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/user/user_login.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/user/user_register.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/worklist/group_worklist.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/worklist/worklist_search.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/class_api/class_search.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/class_api/class_search.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/classuser_api/classuser_modify.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/classuser_api/classuser_modify.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/searchRole_api/search_role.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/searchRole_api/search_role.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/setting_api/settings_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/setting_api/settings_info.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/worklist_api/worklist_search.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/worklist_api/worklist_search.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/class_create.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/class_delete.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/class_search.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/classuser_create.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/classuser_delete.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/classuser_modify.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/classuser_search.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/course_create.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/course_delete.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/file_donwload.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/file_upload.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/search_role.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/settings_router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/settings_router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/userlogin_router.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/userregister_router.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/worklist_search.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +68,12 @@
         <option value="DBeidachazi &lt;269502169@qq.com&gt;" />
       </list>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,22 +102,25 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;configurable..is.expanded&quot;: &quot;true&quot;,
     &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/dbeidachazi/GolandProjects/FengfengStudy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Rainbow Brackets&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/utils" />
-      <recent name="$PROJECT_DIR$/testdata" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/routers/worklist" />
+      <recent name="$PROJECT_DIR$/routers/user" />
+      <recent name="$PROJECT_DIR$/routers/role" />
+      <recent name="$PROJECT_DIR$/routers/file" />
+      <recent name="$PROJECT_DIR$/routers/classuser" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 构建.go build FengfengStudy">
+  <component name="RunManager" selected="Go 构建.go build main.go (1)">
     <configuration name="go build FengfengStudy" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="FengfengStudy" />
       <working_directory value="$PROJECT_DIR$" />
@@ -85,23 +128,28 @@
       <package value="FengfengStudy" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/main.go" />
+      <output_directory value="$PROJECT_DIR$/out" />
       <method v="2" />
     </configuration>
-    <configuration name="go build file_download.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="FengfengStudy" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
       <package value="FengfengStudy" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/api/filedownload_api/file_download.go" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build jwt.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="FengfengStudy" />
       <working_directory value="$PROJECT_DIR$" />
+      <envs>
+        <env name="GO111MODULE" value="off" />
+      </envs>
       <kind value="FILE" />
+      <package value="FengfengStudy" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/testdata/jwt.go" />
+      <filePath value="$APPLICATION_CONFIG_DIR$/scratches/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="FengfengStudy/testdata 中的 Test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -129,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 构建.go build main.go (1)" />
         <item itemvalue="Go 构建.go build FengfengStudy" />
+        <item itemvalue="Go 构建.go build main.go" />
         <item itemvalue="Go 测试.FengfengStudy/testdata 中的 Test" />
         <item itemvalue="Go 测试.go test FengfengStudy/testdata" />
-        <item itemvalue="Go 构建.go build jwt.go" />
-        <item itemvalue="Go 构建.go build file_download.go" />
       </list>
     </recent_temporary>
   </component>
@@ -175,11 +223,28 @@
     <MESSAGE value="修改班级搜索response" />
     <MESSAGE value="classuser delete search操作&#10;class delete操作" />
     <MESSAGE value="search role 优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="search role 优化" />
+    <MESSAGE value="课程创建和删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="课程创建和删除" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/api/classuser_api/classuser_search.go</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/api/test_api/test_api.go</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

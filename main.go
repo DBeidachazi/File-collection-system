@@ -18,6 +18,7 @@ func main() {
 
 	addr := global.Config.System.GetHost()
 	global.Log.Infof("server run at %s", addr)
+
 	err := router.Run(addr)
 	if err != nil {
 		global.Log.Errorln(err)
