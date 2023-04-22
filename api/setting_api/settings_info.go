@@ -6,13 +6,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// SettingsInfoView 测试
 func (SettingsApi) SettingsInfoView(c *gin.Context) {
 	// todo 样例
-	//res.Ok(map[string]string{}, "成功", c)
-	//res.OkWithData(map[string]string{
+	// res.Ok(map[string]string{}, "成功", c)
+	// res.OkWithData(map[string]string{
 	//	"test":  "test",
 	//	"test2": "test2",
-	//}, c)
+	// }, c)
 	stuQId, err := dal.ClassUser.Where(dal.ClassUser.StuID.Eq(20212319)).First()
 	if err != nil {
 		return
