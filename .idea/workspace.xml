@@ -4,50 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/out/go_build_FengfengStudy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/class/class_create.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/class/class_delete.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/class/class_search.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/class/group_class.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/classuser/classuser_create.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/classuser/classuser_delete.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/classuser/classuser_modify.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/classuser/classuser_search.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/classuser/group_classuser.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/course/course_create.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/course/course_delete.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/course/group_course.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/file/file_donwload.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/file/file_upload.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/file/group_file.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/role/group_role.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/role/role_search.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/user/group_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/user/user_login.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/user/user_register.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/worklist/group_worklist.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/worklist/worklist_search.go" afterDir="false" />
+    <list default="true" id="3f246742-124a-41bb-9570-9aeede695c8f" name="变更" comment="更新file文件夹sql语句">
+      <change afterPath="$PROJECT_DIR$/file.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/setting_api/settings_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/setting_api/settings_info.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/class_create.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/class_delete.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/class_search.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/classuser_create.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/classuser_delete.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/classuser_modify.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/classuser_search.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/course_create.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/course_delete.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/enter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/enter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/file_donwload.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/file_upload.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/search_role.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/settings_router.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/settings_router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/userlogin_router.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/userregister_router.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/worklist_search.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,28 +49,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;所有位置&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;configurable..is.expanded&quot;: &quot;true&quot;,
-    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dbeidachazi/GolandProjects/FengfengStudy&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "TODO_SCOPE": "所有位置",
+    "WebServerToolWindowFactoryState": "false",
+    "configurable..is.expanded": "true",
+    "configurable.GoLibrariesConfigurable.is.expanded": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/home/dbeidachazi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/routers/worklist" />
@@ -224,7 +189,8 @@
     <MESSAGE value="classuser delete search操作&#10;class delete操作" />
     <MESSAGE value="search role 优化" />
     <MESSAGE value="课程创建和删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="课程创建和删除" />
+    <MESSAGE value="更新file文件夹sql语句" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新file文件夹sql语句" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
