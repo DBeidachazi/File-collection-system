@@ -27,11 +27,12 @@ func newRole(db *gorm.DB, opts ...gen.DOOption) role {
 
 	tableName := _role.roleDo.TableName()
 	_role.ALL = field.NewAsterisk(tableName)
-	_role.StuID = field.NewInt32(tableName, "stu_id")
+	_role.UserID = field.NewInt32(tableName, "user_id")
 	_role.RoleID = field.NewInt32(tableName, "role_id")
 	_role.RoleName = field.NewString(tableName, "role_name")
 	_role.ClassID = field.NewInt32(tableName, "class_id")
 	_role.Status = field.NewInt32(tableName, "status")
+	_role.StuID = field.NewInt32(tableName, "stu_id")
 	_role.Deadline = field.NewTime(tableName, "deadline")
 	_role.CourseID = field.NewInt32(tableName, "course_id")
 
@@ -44,13 +45,14 @@ type role struct {
 	roleDo
 
 	ALL      field.Asterisk
-	StuID    field.Int32  // 用户id
-	RoleID   field.Int32  // 任务id
-	RoleName field.String // 任务名(course_name)
-	ClassID  field.Int32  // class_id
-	Status   field.Int32  // 1:已提交 2:未提交 3:发布者(不显示)
-	Deadline field.Time   // 截止时间
-	CourseID field.Int32  // 课程id
+	UserID   field.Int32
+	RoleID   field.Int32
+	RoleName field.String
+	ClassID  field.Int32
+	Status   field.Int32 // 1:已提交 2:未提交 3:发布者(不显示)
+	StuID    field.Int32
+	Deadline field.Time
+	CourseID field.Int32
 
 	fieldMap map[string]field.Expr
 }
@@ -67,11 +69,12 @@ func (r role) As(alias string) *role {
 
 func (r *role) updateTableName(table string) *role {
 	r.ALL = field.NewAsterisk(table)
-	r.StuID = field.NewInt32(table, "stu_id")
+	r.UserID = field.NewInt32(table, "user_id")
 	r.RoleID = field.NewInt32(table, "role_id")
 	r.RoleName = field.NewString(table, "role_name")
 	r.ClassID = field.NewInt32(table, "class_id")
 	r.Status = field.NewInt32(table, "status")
+	r.StuID = field.NewInt32(table, "stu_id")
 	r.Deadline = field.NewTime(table, "deadline")
 	r.CourseID = field.NewInt32(table, "course_id")
 
@@ -90,12 +93,13 @@ func (r *role) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (r *role) fillFieldMap() {
-	r.fieldMap = make(map[string]field.Expr, 7)
-	r.fieldMap["stu_id"] = r.StuID
+	r.fieldMap = make(map[string]field.Expr, 8)
+	r.fieldMap["user_id"] = r.UserID
 	r.fieldMap["role_id"] = r.RoleID
 	r.fieldMap["role_name"] = r.RoleName
 	r.fieldMap["class_id"] = r.ClassID
 	r.fieldMap["status"] = r.Status
+	r.fieldMap["stu_id"] = r.StuID
 	r.fieldMap["deadline"] = r.Deadline
 	r.fieldMap["course_id"] = r.CourseID
 }

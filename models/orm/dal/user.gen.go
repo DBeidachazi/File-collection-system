@@ -28,8 +28,9 @@ func newUser(db *gorm.DB, opts ...gen.DOOption) user {
 	tableName := _user.userDo.TableName()
 	_user.ALL = field.NewAsterisk(tableName)
 	_user.StuID = field.NewInt32(tableName, "stu_id")
-	_user.Username = field.NewString(tableName, "username")
+	_user.Name = field.NewString(tableName, "name")
 	_user.Password = field.NewString(tableName, "password")
+	_user.Username = field.NewString(tableName, "username")
 
 	_user.fillFieldMap()
 
@@ -41,8 +42,9 @@ type user struct {
 
 	ALL      field.Asterisk
 	StuID    field.Int32
-	Username field.String
+	Name     field.String
 	Password field.String
+	Username field.String
 
 	fieldMap map[string]field.Expr
 }
@@ -60,8 +62,9 @@ func (u user) As(alias string) *user {
 func (u *user) updateTableName(table string) *user {
 	u.ALL = field.NewAsterisk(table)
 	u.StuID = field.NewInt32(table, "stu_id")
-	u.Username = field.NewString(table, "username")
+	u.Name = field.NewString(table, "name")
 	u.Password = field.NewString(table, "password")
+	u.Username = field.NewString(table, "username")
 
 	u.fillFieldMap()
 
@@ -78,10 +81,11 @@ func (u *user) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (u *user) fillFieldMap() {
-	u.fieldMap = make(map[string]field.Expr, 3)
+	u.fieldMap = make(map[string]field.Expr, 4)
 	u.fieldMap["stu_id"] = u.StuID
-	u.fieldMap["username"] = u.Username
+	u.fieldMap["name"] = u.Name
 	u.fieldMap["password"] = u.Password
+	u.fieldMap["username"] = u.Username
 }
 
 func (u user) clone(db *gorm.DB) user {

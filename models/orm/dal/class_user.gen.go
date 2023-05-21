@@ -29,8 +29,9 @@ func newClassUser(db *gorm.DB, opts ...gen.DOOption) classUser {
 	_classUser.ALL = field.NewAsterisk(tableName)
 	_classUser.ClassID = field.NewInt32(tableName, "class_id")
 	_classUser.StuID = field.NewInt32(tableName, "stu_id")
-	_classUser.Username = field.NewString(tableName, "username")
+	_classUser.Name = field.NewString(tableName, "name")
 	_classUser.PermissionType = field.NewInt32(tableName, "permission_type")
+	_classUser.Username = field.NewString(tableName, "username")
 
 	_classUser.fillFieldMap()
 
@@ -43,8 +44,9 @@ type classUser struct {
 	ALL            field.Asterisk
 	ClassID        field.Int32
 	StuID          field.Int32
+	Name           field.String
+	PermissionType field.Int32 // 1:管理员 2:普通用户
 	Username       field.String
-	PermissionType field.Int32 // 0:普通用户 1:管理员 2: 班级创建者
 
 	fieldMap map[string]field.Expr
 }
@@ -63,8 +65,9 @@ func (c *classUser) updateTableName(table string) *classUser {
 	c.ALL = field.NewAsterisk(table)
 	c.ClassID = field.NewInt32(table, "class_id")
 	c.StuID = field.NewInt32(table, "stu_id")
-	c.Username = field.NewString(table, "username")
+	c.Name = field.NewString(table, "name")
 	c.PermissionType = field.NewInt32(table, "permission_type")
+	c.Username = field.NewString(table, "username")
 
 	c.fillFieldMap()
 
@@ -81,11 +84,12 @@ func (c *classUser) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (c *classUser) fillFieldMap() {
-	c.fieldMap = make(map[string]field.Expr, 4)
+	c.fieldMap = make(map[string]field.Expr, 5)
 	c.fieldMap["class_id"] = c.ClassID
 	c.fieldMap["stu_id"] = c.StuID
-	c.fieldMap["username"] = c.Username
+	c.fieldMap["name"] = c.Name
 	c.fieldMap["permission_type"] = c.PermissionType
+	c.fieldMap["username"] = c.Username
 }
 
 func (c classUser) clone(db *gorm.DB) classUser {

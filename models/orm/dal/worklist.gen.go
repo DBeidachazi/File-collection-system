@@ -29,9 +29,11 @@ func newWorklist(db *gorm.DB, opts ...gen.DOOption) worklist {
 	_worklist.ALL = field.NewAsterisk(tableName)
 	_worklist.WorkID = field.NewInt32(tableName, "work_id")
 	_worklist.CourseID = field.NewInt32(tableName, "course_id")
-	_worklist.CourseName = field.NewString(tableName, "course_name")
+	_worklist.Name = field.NewString(tableName, "name")
+	_worklist.Path = field.NewString(tableName, "path")
 	_worklist.Status = field.NewInt32(tableName, "status")
 	_worklist.StuID = field.NewInt32(tableName, "stu_id")
+	_worklist.CourseName = field.NewString(tableName, "course_name")
 	_worklist.Deadline = field.NewTime(tableName, "deadline")
 
 	_worklist.fillFieldMap()
@@ -43,11 +45,13 @@ type worklist struct {
 	worklistDo
 
 	ALL        field.Asterisk
-	WorkID     field.Int32  // 工作流水号
-	CourseID   field.Int32  // 任务id
-	CourseName field.String // 任务名称
-	Status     field.Int32  // 提交人数
+	WorkID     field.Int32
+	CourseID   field.Int32
+	Name       field.String
+	Path       field.String
+	Status     field.Int32 // 提交人数
 	StuID      field.Int32
+	CourseName field.String
 	Deadline   field.Time
 
 	fieldMap map[string]field.Expr
@@ -67,9 +71,11 @@ func (w *worklist) updateTableName(table string) *worklist {
 	w.ALL = field.NewAsterisk(table)
 	w.WorkID = field.NewInt32(table, "work_id")
 	w.CourseID = field.NewInt32(table, "course_id")
-	w.CourseName = field.NewString(table, "course_name")
+	w.Name = field.NewString(table, "name")
+	w.Path = field.NewString(table, "path")
 	w.Status = field.NewInt32(table, "status")
 	w.StuID = field.NewInt32(table, "stu_id")
+	w.CourseName = field.NewString(table, "course_name")
 	w.Deadline = field.NewTime(table, "deadline")
 
 	w.fillFieldMap()
@@ -87,12 +93,14 @@ func (w *worklist) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (w *worklist) fillFieldMap() {
-	w.fieldMap = make(map[string]field.Expr, 6)
+	w.fieldMap = make(map[string]field.Expr, 8)
 	w.fieldMap["work_id"] = w.WorkID
 	w.fieldMap["course_id"] = w.CourseID
-	w.fieldMap["course_name"] = w.CourseName
+	w.fieldMap["name"] = w.Name
+	w.fieldMap["path"] = w.Path
 	w.fieldMap["status"] = w.Status
 	w.fieldMap["stu_id"] = w.StuID
+	w.fieldMap["course_name"] = w.CourseName
 	w.fieldMap["deadline"] = w.Deadline
 }
 

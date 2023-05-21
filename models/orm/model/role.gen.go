@@ -12,13 +12,14 @@ const TableNameRole = "role"
 
 // Role mapped from table <role>
 type Role struct {
-	StuID    int32     `gorm:"column:stu_id;not null" json:"stu_id"`                        // 用户id
-	RoleID   int32     `gorm:"column:role_id;primaryKey;autoIncrement:true" json:"role_id"` // 任务id
-	RoleName string    `gorm:"column:role_name;not null" json:"role_name"`                  // 任务名(course_name)
-	ClassID  int32     `gorm:"column:class_id;not null" json:"class_id"`                    // class_id
-	Status   int32     `gorm:"column:status;not null" json:"status"`                        // 1:已提交 2:未提交 3:发布者(不显示)
-	Deadline time.Time `gorm:"column:deadline;not null" json:"deadline"`                    // 截止时间
-	CourseID int32     `gorm:"column:course_id;not null" json:"course_id"`                  // 课程id
+	UserID   int32     `gorm:"column:user_id;not null" json:"user_id"`
+	RoleID   int32     `gorm:"column:role_id;primaryKey;autoIncrement:true" json:"role_id"`
+	RoleName string    `gorm:"column:role_name;not null" json:"role_name"`
+	ClassID  int32     `gorm:"column:class_id;not null" json:"class_id"`
+	Status   int32     `gorm:"column:status;not null" json:"status"` // 1:已提交 2:未提交 3:发布者(不显示)
+	StuID    int32     `gorm:"column:stu_id;not null" json:"stu_id"`
+	Deadline time.Time `gorm:"column:deadline;not null" json:"deadline"`
+	CourseID int32     `gorm:"column:course_id;not null" json:"course_id"`
 }
 
 // TableName Role's table name

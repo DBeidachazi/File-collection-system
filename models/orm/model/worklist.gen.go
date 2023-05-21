@@ -12,11 +12,13 @@ const TableNameWorklist = "worklist"
 
 // Worklist mapped from table <worklist>
 type Worklist struct {
-	WorkID     int32     `gorm:"column:work_id;primaryKey;autoIncrement:true" json:"work_id"` // 工作流水号
-	CourseID   int32     `gorm:"column:course_id;not null" json:"course_id"`                  // 任务id
-	CourseName string    `gorm:"column:course_name;not null" json:"course_name"`              // 任务名称
-	Status     int32     `gorm:"column:status;not null" json:"status"`                        // 提交人数
+	WorkID     int32     `gorm:"column:work_id;primaryKey;autoIncrement:true" json:"work_id"`
+	CourseID   int32     `gorm:"column:course_id;not null" json:"course_id"`
+	Name       string    `gorm:"column:name;not null" json:"name"`
+	Path       string    `gorm:"column:path;not null" json:"path"`
+	Status     int32     `gorm:"column:status;not null" json:"status"` // 提交人数
 	StuID      int32     `gorm:"column:stu_id;not null" json:"stu_id"`
+	CourseName string    `gorm:"column:course_name" json:"course_name"`
 	Deadline   time.Time `gorm:"column:deadline;not null" json:"deadline"`
 }
 

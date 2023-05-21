@@ -28,12 +28,14 @@ func newCourse(db *gorm.DB, opts ...gen.DOOption) course {
 	tableName := _course.courseDo.TableName()
 	_course.ALL = field.NewAsterisk(tableName)
 	_course.CourseID = field.NewInt32(tableName, "course_id")
-	_course.CourseName = field.NewString(tableName, "course_name")
+	_course.Name = field.NewString(tableName, "name")
 	_course.ClassID = field.NewInt32(tableName, "class_id")
-	_course.Username = field.NewString(tableName, "username")
+	_course.PublisherName = field.NewString(tableName, "publisher_name")
 	_course.Deadline = field.NewTime(tableName, "deadline")
 	_course.StuID = field.NewInt32(tableName, "stu_id")
 	_course.FileType = field.NewString(tableName, "file_type")
+	_course.Username = field.NewString(tableName, "username")
+	_course.CourseName = field.NewString(tableName, "course_name")
 
 	_course.fillFieldMap()
 
@@ -43,14 +45,16 @@ func newCourse(db *gorm.DB, opts ...gen.DOOption) course {
 type course struct {
 	courseDo
 
-	ALL        field.Asterisk
-	CourseID   field.Int32
-	CourseName field.String
-	ClassID    field.Int32
-	Username   field.String // 发布者名
-	Deadline   field.Time   // 截止时间
-	StuID      field.Int32  // 发布者id
-	FileType   field.String
+	ALL           field.Asterisk
+	CourseID      field.Int32
+	Name          field.String
+	ClassID       field.Int32
+	PublisherName field.String
+	Deadline      field.Time // 截止时间
+	StuID         field.Int32
+	FileType      field.String
+	Username      field.String
+	CourseName    field.String
 
 	fieldMap map[string]field.Expr
 }
@@ -68,12 +72,14 @@ func (c course) As(alias string) *course {
 func (c *course) updateTableName(table string) *course {
 	c.ALL = field.NewAsterisk(table)
 	c.CourseID = field.NewInt32(table, "course_id")
-	c.CourseName = field.NewString(table, "course_name")
+	c.Name = field.NewString(table, "name")
 	c.ClassID = field.NewInt32(table, "class_id")
-	c.Username = field.NewString(table, "username")
+	c.PublisherName = field.NewString(table, "publisher_name")
 	c.Deadline = field.NewTime(table, "deadline")
 	c.StuID = field.NewInt32(table, "stu_id")
 	c.FileType = field.NewString(table, "file_type")
+	c.Username = field.NewString(table, "username")
+	c.CourseName = field.NewString(table, "course_name")
 
 	c.fillFieldMap()
 
@@ -90,14 +96,16 @@ func (c *course) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 }
 
 func (c *course) fillFieldMap() {
-	c.fieldMap = make(map[string]field.Expr, 7)
+	c.fieldMap = make(map[string]field.Expr, 9)
 	c.fieldMap["course_id"] = c.CourseID
-	c.fieldMap["course_name"] = c.CourseName
+	c.fieldMap["name"] = c.Name
 	c.fieldMap["class_id"] = c.ClassID
-	c.fieldMap["username"] = c.Username
+	c.fieldMap["publisher_name"] = c.PublisherName
 	c.fieldMap["deadline"] = c.Deadline
 	c.fieldMap["stu_id"] = c.StuID
 	c.fieldMap["file_type"] = c.FileType
+	c.fieldMap["username"] = c.Username
+	c.fieldMap["course_name"] = c.CourseName
 }
 
 func (c course) clone(db *gorm.DB) course {

@@ -3,7 +3,7 @@ mysql:
   port: 3306
   db: file
   user: root
-  password: a
+  password: 123456
   log_level: dev
 logger:
   level: info
